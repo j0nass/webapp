@@ -1,0 +1,235 @@
+<html lang="en"><head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="dup_css\dupgeneral.css">
+   <link rel="stylesheet" type="text/css" href="dup_css\duplist.css">
+   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+   <title>theBookshop - Novels</title>
+ </head>
+ <body>
+   <header>
+     <div id="logo" onclick="goToIndex()">
+       <h1>the<span>Bookshop</span></h1>
+     </div>
+     <div>
+       <div id="basket" onclick="goToBasket()">
+         <i class="fas fa-shopping-bag"></i>
+         <p>Basket <span id="basket_size">(1 item)</span></p>
+       </div>
+       <div id="menu">
+         <div class="menu_item menu_selected">
+           <p>NOVELS</p>
+         </div>
+         <div class="menu_item">
+           <p>COMICS</p>
+         </div>
+         <div class="menu_item">
+           <p>HISTORY</p>
+         </div>
+         <div class="menu_item">
+           <p>SCIENCE</p>
+         </div>
+       </div>
+     </div>
+   </header>
+   <main>
+    <div class="products_main">
+      <div class="filters">
+        <h3>FILTERS</h3>
+        <h4>Language:</h4>
+        <input type="checkbox" id="language1" name="language1" value="English">
+        <label for="language1">English</label><br>
+        <input type="checkbox" id="language2" name="language2" value="Finnish">
+        <label for="language2">Nepali</label><br>
+        <input type="checkbox" id="language3" name="language3" value="Spanish">
+        <label for="language3">Spanish</label><br>
+        <h4>Genre:</h4>
+        <input type="checkbox" id="genre1" name="genre1" value="Classics">
+        <label for="genre1">Classics</label><br>
+        <input type="checkbox" id="genre2" name="genre2" value="Fantasy">
+        <label for="genre2">Fantasy</label><br>
+        <input type="checkbox" id="genre3" name="genre3" value="Historical">
+        <label for="genre3">Historical</label><br>
+      </div>
+      <div class="products_subsection">
+       <div class="headline">
+         <h2>Novels</h2>
+       </div>
+       <div class="products_list">
+        <div class="product_item" id="item_0">
+          <div onclick="openDetails('Phoolko Aankhaama')">
+          <img src="images\Phoolko Aankhaama.jpg">
+          <h3>Phoolko Aankhaama</h3>
+          <h4>Ani Choying Drolma</h4>
+          <h5>12.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_0">Added to your basket.</p>
+          <p class="button_primary" id="button_0" onclick="toBasket('Phoolko Aankhaama', '0')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_1">
+          <div onclick="openDetails('Muna Madan')">
+          <img src="images\Muna madan.jpg">
+          <h3>Muna Madan</h3>
+          <h4>Laxmi Prasad Devkota  </h4>
+          <h5>25.53 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_1">Added to your basket.</p>
+          <p class="button_primary" id="button_1" onclick="toBasket('Muna Madan', '1')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_2">
+          <div onclick="openDetails('Don Quijote de la Mancha')">
+          <img src="images\Quijote.jpg">
+          <h3>Don Quijote de la Mancha</h3>
+          <h4>Miguel de Cervantes</h4>
+          <h5>14.95 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_2">Added to your basket.</p>
+          <p class="button_primary" id="button_2" onclick="toBasket('Don Quijote de la Mancha', '2')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_3">
+          <div onclick="openDetails('Harry Potter and the Philosophers Stone')">
+          <img src="/images/potter1.jpeg">
+          <h3>Harry Potter and the Philosopher's Stone</h3>
+          <h4>J.K. Rowling</h4>
+          <h5>15.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_3">Added to your basket.</p>
+          <p class="button_primary" id="button_3" onclick="toBasket('Harry Potter and the Philosophers Stone', '3')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_4">
+          <div onclick="openDetails('Harry Potter and the Chamber of Secrets')">
+          <img src="/images/potter2.jpeg">
+          <h3>Harry Potter and the Chamber of Secrets</h3>
+          <h4>J.K. Rowling</h4>
+          <h5>15.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_4">Added to your basket.</p>
+          <p class="button_primary" id="button_4" onclick="toBasket('Harry Potter and the Chamber of Secrets', '4')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_5">
+          <div onclick="openDetails('Harry Potter and the Prisoner of Azkaban')">
+          <img src="/images/potter3.jpeg">
+          <h3>Harry Potter and the Prisoner of Azkaban</h3>
+          <h4>J.K. Rowling</h4>
+          <h5>15.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_5">Added to your basket.</p>
+          <p class="button_primary" id="button_5" onclick="toBasket('Harry Potter and the Prisoner of Azkaban', '5')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_6">
+          <div onclick="openDetails('Harry Potter and the Goblet of Fire')">
+          <img src="/images/potter4.jpeg">
+          <h3>Harry Potter and the Goblet of Fire</h3>
+          <h4>J.K. Rowling</h4>
+          <h5>15.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_6">Added to your basket.</p>
+          <p class="button_primary" id="button_6" onclick="toBasket('Harry Potter and the Goblet of Fire', '6')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_7">
+          <div onclick="openDetails('Harry Potter and the Order of the Phoenix')">
+          <img src="/images/potter5.jpeg">
+          <h3>Harry Potter and the Order of the Phoenix</h3>
+          <h4>J.K. Rowling</h4>
+          <h5>15.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_7">Added to your basket.</p>
+          <p class="button_primary" id="button_7" onclick="toBasket('Harry Potter and the Order of the Phoenix', '7')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_8">
+          <div onclick="openDetails('Harry Potter and the Half-Blood Prince')">
+          <img src="/images/potter6.jpeg">
+          <h3>Harry Potter and the Half-Blood Prince</h3>
+          <h4>J.K. Rowling</h4>
+          <h5>15.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_8">Added to your basket.</p>
+          <p class="button_primary" id="button_8" onclick="toBasket('Harry Potter and the Half-Blood Prince', '8')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_9">
+          <div onclick="openDetails('Harry Potter and the Deathly Hallows')">
+          <img src="/images/potter7.jpeg">
+          <h3>Harry Potter and the Deathly Hallows</h3>
+          <h4>J.K. Rowling</h4>
+          <h5>15.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_9">Added to your basket.</p>
+          <p class="button_primary" id="button_9" onclick="toBasket('Harry Potter and the Deathly Hallows', '9')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_10">
+          <div onclick="openDetails('The Notebook')">
+          <img src="images\Notebook Cover page.jpg">
+          <h3>The Notebook</h3>
+          <h4>Nicholas Sparks</h4>
+          <h5>20.00 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_10">Added to your basket.</p>
+          <p class="button_primary" id="button_10" onclick="toBasket('The Notebook', '10')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_11">
+          <div onclick="openDetails('La catedral del mar')">
+          <img src="images\Catedral.jpg">
+          <h3>La catedral del mar</h3>
+          <h4>Ildefonso Falcones</h4>
+          <h5>10.95 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_11">Added to your basket.</p>
+          <p class="button_primary" id="button_11" onclick="toBasket('La catedral del mar', '11')">Add to Basket</p>
+          </div>
+        </div>
+        <div class="product_item" id="item_12">
+          <div onclick="openDetails('The Great Gatsby')">
+          <img src="images\The Great Gatsby.jpg">
+          <h3>The Great Gatsby</h3>
+          <h4>F. Scott Fitzgerald</h4>
+          <h5>:9.90 €</h5>
+          </div>
+          <div class="button_popup">
+          <p class="popup" id="popup_12">Added to your basket.</p>
+          <p class="button_primary" id="button_12" onclick="toBasket('The Great Gatsby', '12')">Add to Basket</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>    
+   </main>
+   <footer>
+     <p>Contact Us</p>
+     <p>Terms &amp; <br>Conditions</p>
+     <p>Help</p>
+     <p>Site Map</p>
+     <div id="social_media">
+       <p>Follow Us!</p>
+       <div>
+         <i class="fab fa-facebook-square"></i>
+         <i class="fab fa-twitter-square"></i>
+         <i class="fab fa-instagram-square"></i>
+       </div>
+     </div>
+   </footer>
+   <script src="js_dup\productList_dup.js"></script>
+</body>
+</html>

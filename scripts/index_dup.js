@@ -1,4 +1,4 @@
-window.addEventListener("load", changeAddress);
+<window.addEventListener("load", changeAddress);
 function changeAddress() {
   window.history.replaceState({}, document.title, "/" + "index.html");
 }

@@ -1,18 +1,18 @@
 window.addEventListener("load", changeAddress);
 function changeAddress() {
-  window.history.replaceState({}, document.title, "/" + "dup_details.html");
+  window.history.replaceState({}, document.title, "/" + "productDetail.html");
 }
 
 const imageSlot = document.getElementById("productImage");
 const titleSlot = document.getElementById("productTitle");
 const authorSlot = document.getElementById("productAuthor");
-const versionSlot = document.getElementById("productversion");
+const formatSlot = document.getElementById("productFormat");
 const pubDateSlot = document.getElementById("productPubDate");
 const languageSlot = document.getElementById("productLanguage");
-const Slot = document.getElementById("productpages");
+const lengthSlot = document.getElementById("productLength");
 const priceSlot = document.getElementById("productPrice");
 const summarySlot = document.getElementById("productSummary");
-const similar = document.getElementsByClassName("similar_products")[0];
+const related = document.getElementsByClassName("related_products")[0];
 const basketSize = document.getElementById("basket_size");
 const counterUp = document.getElementById("counter_up");
 const counterDown = document.getElementById("counter_down");
@@ -33,16 +33,16 @@ if (window.location.search.substring(1).indexOf("?") !== -1) {
 }
 
 function updateBasketSize(basket) {
-  if (basket.pages === 1) {
+  if (basket.length === 1) {
     const size = basket[0].quantity;
     if (size === 1) {
       basketSize.innerHTML = "(1 item)";
     } else {
       basketSize.innerHTML = "(" + size + " items)";
     }
-  } else if (basket.pages > 1) {
+  } else if (basket.length > 1) {
     let size = 0;
-    for (let i = 0; i < basket.pages; i++) {
+    for (let i = 0; i < basket.length; i++) {
       size += basket[i].quantity;
     }
     basketSize.innerHTML = "(" + size + " items)";
@@ -53,7 +53,7 @@ function updateBasketSize(basket) {
 if (title === "Harry Potter and the Philosophers Stone") {
   title = "Harry Potter and the Philosopher's Stone"
 } 
-fetch("/json/books_dup.json")
+fetch("/json/books.json")
   .then(res => {
     return res.json();
   })
@@ -62,28 +62,28 @@ fetch("/json/books_dup.json")
     imageSlot.src = product.image;
     titleSlot.innerHTML = product.title;
     authorSlot.innerHTML = product.author;
-    versionSlot.innerHTML = product.version;
+    formatSlot.innerHTML = product.format;
     pubDateSlot.innerHTML = product.pubDate;
     languageSlot.innerHTML = product.language;
-    pagesSlot.innerHTML = product.pages;
+    lengthSlot.innerHTML = product.length;
     priceSlot.innerHTML = product.price.toFixed(2) + " €";
     summarySlot.innerHTML = product.summary;
 
     const filters = product.filters;
-    let similarItems = [];
+    let relatedItems = [];
     const newData = data.filter(item => item.title !== product.title);
-    for (let i = 0; i < filters.pages; i++) {
+    for (let i = 0; i < filters.length; i++) {
       newData.map(item => {
         const itemFilters = item.filters;
-        for (let k = 0; k < itemFilters.pages; k++) {
+        for (let k = 0; k < itemFilters.length; k++) {
           if (itemFilters[k] === filters[i]) {
-            const similarItem = {
+            const relatedItem = {
               title: item.title,
               author: item.author,
               image: item.image
             }
-            if (similarItems.pages < 4) {
-              similarItems = [...similarItems, similarItem];
+            if (relatedItems.length < 4) {
+              relatedItems = [...relatedItems, relatedItem];
             } else {
               break;
             }
@@ -91,20 +91,20 @@ fetch("/json/books_dup.json")
         }
       });
     }
-    similarItems.map(item => {
-      const itemToAdd = `<div class="similar_item">
+    relatedItems.map(item => {
+      const itemToAdd = `<div class="related_item">
         <img src="${item.image}">
         <h3>${item.title}</h3>
         <h4>${item.author}</h4>
       </div>`;
-      similar.innerHTML += itemToAdd;
+      related.innerHTML += itemToAdd;
     });
   });
 
 
 function goToBasket() {
   const basketContent = JSON.stringify(basket);
-  location.href='/cart_dup.html?basket=' + basketContent;
+  location.href='/cart.html?basket=' + basketContent;
 }
 
 window.addEventListener("load", () => {
@@ -123,7 +123,7 @@ function toBasket(title) {
   button.setAttribute("disabled", true);
   setTimeout(() => button.removeAttribute("disabled"), 3000);
 
-  fetch("/json/books_dup.json")
+  fetch("/json/books.json")
   .then(res => {
     return res.json();
   })
@@ -134,14 +134,14 @@ function toBasket(title) {
     const product = data.filter(item => item.title === title)[0];
     const quantity = parseInt(document.getElementById("counter_number").innerHTML);
     const inBasket = basket.filter(item => item.title === title);
-    if (inBasket.pages === 0) {
+    if (inBasket.length === 0) {
       if (product !== undefined) {
         productToCart = {
           image: product.image,
           title: product.title,
           author: product.author,
-          pages: product.pages,
-          version: product.version,
+          length: product.length,
+          format: product.format,
           price: product.price,
           quantity: quantity
         };
@@ -149,7 +149,7 @@ function toBasket(title) {
       }
     } else {
       let inBasketIndex;
-      for (let i = 0; i < basket.pages; i++) {
+      for (let i = 0; i < basket.length; i++) {
         if (basket[i].title === title) {
           inBasketIndex = i;
           break;
@@ -161,24 +161,24 @@ function toBasket(title) {
         image: product.image,
         title: product.title,
         author: product.author,
-        pages: product.pages,
-        version: product.version,
+        length: product.length,
+        format: product.format,
         price: product.price,
         quantity: newQuantity
       }
       basket[inBasketIndex] = productToCart;
     } 
 
-    if (basket.pages === 1) {
+    if (basket.length === 1) {
       const size = basket[0].quantity;
       if (size === 1) {
         basketSize.innerHTML = "(1 item)";
       } else {
         basketSize.innerHTML = "(" + size + " items)";
       }
-    } else if (basket.pages > 1) {
+    } else if (basket.length > 1) {
       let size = 0;
-      for (let i = 0; i < basket.pages; i++) {
+      for (let i = 0; i < basket.length; i++) {
         size += basket[i].quantity;
       }
       basketSize.innerHTML = "(" + size + " items)";
