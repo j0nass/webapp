@@ -1,110 +1,124 @@
-<html lang="en">
-  <head>
-   <meta charset="utf-8">
-   <link rel="stylesheet" type="text/css" href="css\general.css">
-   <link rel="stylesheet" type="text/css" href="css\productDetail.css">
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
-   <title>theBookshop - Product details</title>
- </head>
- <body>
-   <header>
-     <div id="logo" onclick="goToIndex()">
-       <h1>the<span>Bookshop</span></h1>
-     </div>
-     <div>
-       <div id="basket" onclick="goToBasket()">
-         <i class="fas fa-shopping-bag"></i>
-         <p>Basket <span id="basket_size">(0 items)</span></p>
-       </div>
-       <div id="menu">
-         <div class="menu_item menu_selected">
-           <p>NOVELS</p>
-         </div>
-         <div class="menu_item">
-           <p>COMICS</p>
-         </div>
-         <div class="menu_item">
-           <p>HISTORY</p>
-         </div>
-         <div class="menu_item">
-           <p>SCIENCE</p>
-         </div>
-       </div>
-     </div>
-   </header>
-   <main>
-     <div class="headline">
-       <h2>Novels ~ Product details</h2>
-     </div>
-     <div id="product_details">
-       <div class="details_upper">
-         <div class="details_image">
-           <img id="productImage" src="">
-         </div>
-         <div class="details_info">
-           <div class="main_details">
-             <h3 id="productTitle"></h3>
-             <h4 id="productAuthor"></h4>
-           </div>
-           <div class="further_details">
-             <p>Format:</p> <p id="productFormat"></p>
-             <p>Publication date:</p> <p id="productPubDate"></p>
-             <p>Language:</p> <p id="productLanguage"></p>
-             <p>Length:</p> <p id="productLength"></p>
-           </div>
-         </div>
-         <div class="details_price">
-           <p class="price" id="productPrice"></p>
-           <div class="quantity">
-             <p>Quantity:</p>
-             <div class="quantity_counter">
-               <div id="counter">
-                 <p id="counter_number">1</p>
-               </div>
-               <div class="up_down">
-                 <div id="counter_up">
-                   <i class="fas fa-sort-up"></i>
-                 </div>
-                 <div id="counter_down">
-                   <i class="fas fa-sort-down"></i>
-                 </div>
-               </div>
-             </div>
-           </div>
-           <div class="button_popup">
-             <p class="popup_details" id="basket_popup">Added to your basket.</p>
-             <p class="button_primary" id="basket_button">Add to Basket</p>
-           </div>
-         </div>
-       </div>
-       <div class="details_lower">
-         <p class="summary_title">Summary</p>
-         <p class="summary_content" id="productSummary"></p>
-       </div>
-     </div>
-     <div id="related">
-       <div class="headline">
-         <h2>Related products</h2>
-       </div>
-       <div class="related_products"></div>
-     </div>
-   </main>
-   <footer>
-     <p>Contact Us</p>
-     <p>Terms &amp; <br>Conditions</p>
-     <p>Help</p>
-     <p>Site Map</p>
-     <div id="social_media">
-       <p>Follow Us!</p>
-       <div>
-         <i class="fab fa-facebook-square"></i>
-         <i class="fab fa-twitter-square"></i>
-         <i class="fab fa-instagram-square"></i>
-       </div>
-     </div>
-   </footer>
-   <script src="scripts\productDetail.js"></script>
- </body>
-</html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/general.css">
+  <link rel="stylesheet" type="text/css" href="css/productDetail.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+  <title>theBookshop - Product details</title>
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="goToIndex()">
+      <h1>the<span>Bookshop</span></h1>
+    </div>
+    <div>
+      <div id="basket" onclick="goToBasket()">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Basket <span id="basket_size">(0 items)</span></p>
+      </div>
+      <div id="menu">
+        <div class="menu_item menu_selected">
+          <p>NOVELS</p>
+        </div>
+        <div class="menu_item">
+          <p>COMICS</p>
+        </div>
+        <div class="menu_item">
+          <p>HISTORY</p>
+        </div>
+        <div class="menu_item">
+          <p>SCIENCE</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="headline">
+      <h2>Novels ~ Product details</h2>
+    </div>
+    <div id="product_details">
+      <div class="details_upper">
+        <div class="details_image">
+          <img id="productImage" src="/images/Catedral.jpg">
+        </div>
+        <div class="details_info">
+          <div class="main_details">
+            <h3 id="productTitle">La Catedral del Mar</h3>
+            <h4 id="productAuthor">Ildefonso Falcones</h4>
+          </div>
+          <div class="further_details">
+            <p>Format:</p> <p id="productFormat">Paperback</p>
+            <p>Publication date:</p> <p id="productPubDate">July 2018</p>
+            <p>Language:</p> <p id="productLanguage">Spanish</p>
+            <p>Length:</p> <p id="productLength">672 pages</p>
+          </div>
+        </div>
+        <div class="details_price">
+          <p class="price" id="productPrice">10.90 €</p>
+          <div class="quantity">
+            <p>Quantity:</p>
+            <div class="quantity_counter">
+              <div id="counter">
+                <p id="counter_number">1</p>
+              </div>
+              <div class="up_down">
+                <div id="counter_up">
+                  <i class="fas fa-sort-up"></i>
+                </div>
+                <div id="counter_down">
+                  <i class="fas fa-sort-down"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button_popup">
+            <p class="popup_details" id="basket_popup">Added to your basket.</p>
+            <p class="button_primary" id="basket_button">Add to Basket</p>
+          </div>
+        </div>
+      </div>
+      <div class="details_lower">
+        <p class="summary_title">Summary</p>
+        <p class="summary_content" id="productSummary">In the tradition of Ken Folletts The Pillars of the Earth, here is a thrilling historical novel of friendship and revenge, plague and hope, love and war, set in the golden age of 14th-century Barcelona. Arnau Estanyol arrives in Barcelona and joins the powerful guild of stone-workers building the magnificent cathedral of Santa Maria del Mar, while his adoptive brother Joan studies to become a priest. As Arnau prospers, he secretly falls in love with a forbidden woman. When he is betrayed and hauled before the Inquisitor, he finds himself face-to-face with his own brother. Will he lose his life just as his beloved cathedral is finally completed, or will his brother spare him?</p>
+      </div>
+    </div>
+    <div id="related">
+      <div class="headline">
+        <h2>Related products</h2>
+      </div>
+      <div class="related_products"><div class="related_item">
+      <img src="/images/Quijote.jpg">
+      <h3>Don Quijote de la Mancha</h3>
+      <h4>Miguel de Cervantes</h4>
+    </div><div class="related_item">
+      <img src="/images/susipalatsi.jpeg">
+      <h3>Susipalatsi</h3>
+      <h4>Hilary Mantel</h4>
+    </div><div class="related_item">
+      <img src="/images/syytettyjen.jpg">
+      <h3>Syytettyjen sali</h3>
+      <h4>Hilary Mantel</h4>
+    </div><div class="related_item">
+      <img src="/images/kuningashuone.png">
+      <h3>Kuningashuone</h3>
+      <h4>Hilary Mantel</h4>
+    </div></div>
+    </div>
+  </main>
+  <footer>
+    <p>Contact Us</p>
+    <p>Terms &amp; <br>Conditions</p>
+    <p>Help</p>
+    <p>Site Map</p>
+    <div id="social_media">
+      <p>Follow Us!</p>
+      <div>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-instagram-square"></i>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/productDetail.js"></script>
+</body></html>
